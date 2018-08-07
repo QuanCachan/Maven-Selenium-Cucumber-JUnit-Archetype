@@ -16,19 +16,30 @@ import org.openqa.selenium.support.How;
  */
 public class HomePage extends Page {
 
-	private final String H1_TAG = "h1";
+	private static final String INPUT_FIELD = "lst-ib";
 	
-	@FindBy(how = How.TAG_NAME, using = H1_TAG)
+	private static final String SEARCH_BUTTON = "btnK";
+	
+	@FindBy(how = How.ID, using = INPUT_FIELD)
 	@CacheLookup
-	private WebElement h1Element;
+	private WebElement inputField;
+	
+	@FindBy(how = How.ID_OR_NAME, using = SEARCH_BUTTON)
+	@CacheLookup
+	private WebElement searchButton;
 	
 	public HomePage(WebDriver webDriver) {
 		super(webDriver);
 	}
 
-	public WebElement getH1Element() {
-		return h1Element;
+	public WebElement getInputField() {
+		return inputField;
 	}
+
+	public WebElement getSearchButton() {
+		return searchButton;
+	}
+
 
 	//You can define other elements of your Website below...
 

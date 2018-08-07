@@ -5,8 +5,6 @@ package ${groupId}.pages;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 
 import ${groupId}.util.Browser;
@@ -27,8 +25,8 @@ public class TestBase {
 
 	protected static Browser browser;
 
-	@BeforeClass
-	public static void init() {
+	
+	protected static void initCucumberTests() {
 		websiteUrl = PropertyLoader.loadProperty("site.url");
 
 		gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
@@ -45,8 +43,7 @@ public class TestBase {
 		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
-	@AfterClass
-	public static void tearDown() {
+	protected static void tearDownCucumberTests() {
 		if (webDriver != null) {
 			webDriver.quit();
 		}

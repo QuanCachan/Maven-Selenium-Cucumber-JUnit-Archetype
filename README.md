@@ -40,18 +40,11 @@ Hudson/Jenkins).
 **TestBase** class provides 30 seconds as interval for polling element from the DOM (implicity wait), and also it takes care of closing the driver when all the tests are executed in the suite. 
 (Feel free to update all this values according to your needs)
 
-**HomePageTest** class (in *src/test/java/your.group.Id/pages*) is just an example of a test class for testing the homepage of a web application. In the setup method of this class, the **PageFactory** class is used
- to help supporting the **PageObject** pattern (see below for more information). Briefly according to this pattern, each page is an object. *src/main/java/your.group.Id/pages/HomePage* class is an example of 
- a class representing the home page. Notice how the constructor accepts the "WebDriver" interface as parameter and all the "services" available for that page should be exposed here. It also allows to
- decouple the DOM element from the functionalities offered by the page.
- 
- 
-Adding Chrome Driver to the project
+ Adding Chrome Driver to the project
 -----------------------------------
 
 If you need to use chromedriver, you should put the proper driver file downloaded from http://chromedriver.chromium.org/downloads into *src/main/resources/your.group.Id/drivers/chrome*. If you are on Windows, the file should be named *chromedriver.exe*,
 if on Unix-based system, the file should be named *chromedriver*.
-
 
 Adding Other Browser Driver to the project
 -----------------------------------
